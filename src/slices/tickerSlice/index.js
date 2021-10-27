@@ -1,0 +1,1 @@
+export { default as tickerReducer, selectTicker, setTicker } from "./tickerSlice";

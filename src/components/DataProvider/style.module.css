@@ -1,0 +1,16 @@
+.main {
+  background-color: #102331;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width:768px){
+  .main{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (min-width:1200px){
+  
+}

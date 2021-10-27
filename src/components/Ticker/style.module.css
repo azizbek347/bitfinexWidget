@@ -1,0 +1,82 @@
+.container {
+  flex: 1;
+  display: flex;
+  background-color: #172d3e;
+  align-items: center;
+  padding: 10px;
+  font-size: 12px;
+  margin: 0 0 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row + .row {
+  margin: 4px 0 0;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.tickerIcon {
+  margin: 0 10px 0 0;
+  max-width: 48px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.tickerIcon img {
+  aspect-ratio: 1/1;
+  max-width: 100%;
+  width: 100%;
+}
+
+.tickerInner {
+  flex: 1 0 auto;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.tickerPairName,
+.tickerPairValue {
+  color: #cacdce;
+}
+.tickerVolValue,
+.tickerVolName {
+  color: #b3b7ba;
+}
+
+.tickerVolValue.up {
+  color: #92c03a;
+}
+
+.tickerVolValue.down {
+  color: #503038;
+}
+
+.tickerLowHighName,
+.tickerLowHighValue {
+  color: #878d91;
+}
+
+@media only screen and (min-width: 768px) {
+  .container{
+    margin: 0;
+  }
+  .tickerIcon {
+    max-width: 56px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .container{
+    font-size: 14px;
+    align-self: start;
+  }
+  .tickerIcon{
+    max-width: 64px;
+  }
+}
