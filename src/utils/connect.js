@@ -40,7 +40,8 @@ export const dataHandlerWrapper = (dataHandler = {}) => (data) => {
 }
 
 export const connect = (dataHandler) => (connected) => {
-    if (!connected) socket?.close();
+    const {autostart, restart} = connected;
+    if (!autostart || !restart) socket?.close();
     else {
         socket = new WebSocket(url);
         socket.onopen = () => {

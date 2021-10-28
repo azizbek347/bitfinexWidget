@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectTicker } from '../../slices/tickerSlice';
 import { tickerOptions } from '../../utils/options';
 import { FaCaretDown, FaCaretUp } from 'react-icons/fa';
-import { formatNumber } from '../../utils/formatNumber';
+import { numberWithCommas } from '../../utils/formatNumber';
 import styles from './style.module.css';
 
 const Ticker = () => {
@@ -33,12 +33,12 @@ const Ticker = () => {
             {crypto}/{currency}
           </p>
           <p className={`${styles.tickerPairValue}`}>
-            {formatNumber(LAST_PRICE)}
+            {numberWithCommas(LAST_PRICE)}
           </p>
         </div>
         <div className={`${styles.row}`}>
           <p className={`${styles.tickerVolName}`}>
-            VOL {formatNumber(VOLUME)}{' '}
+            VOL {numberWithCommas(VOLUME)}{' '}
             <span className={`${styles.underline}`}>{crypto}</span>
           </p>
           <p
@@ -46,17 +46,17 @@ const Ticker = () => {
               DAILY_CHANGE_PERC < 0 ? `${styles.down}` : `${styles.up}`
             }`}
           >
-            {formatNumber(DAILY_CHANGE)}{' '}
+            {numberWithCommas(DAILY_CHANGE)}
             {DAILY_CHANGE_PERC < 0 ? <FaCaretDown /> : <FaCaretUp />} (
-            {formatNumber(DAILY_CHANGE_PERC)})
+            {numberWithCommas(DAILY_CHANGE_PERC)})
           </p>
         </div>
         <div className={`${styles.row}`}>
           <p className={`${styles.tickerLowHighName}`}>
-            LOW {formatNumber(LOW)}
+            LOW {numberWithCommas(LOW)}
           </p>
           <p className={`${styles.tickerLowHighValue}`}>
-            HIGH {formatNumber(HIGH)}
+            HIGH {numberWithCommas(HIGH)}
           </p>
         </div>
       </div>

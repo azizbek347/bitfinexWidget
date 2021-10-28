@@ -9,15 +9,16 @@ import styles from './style.module.css';
 
 const Controls = () => {
   const status = useSelector(selectConnectionStatus);
+  const { autostart } = status;
   const dispatch = useDispatch();
   const clickHanlder = () => {
-    if (status) dispatch(setConnectionStatus(false));
-    else dispatch(setConnectionStatus(true));
+    if (autostart) dispatch(setConnectionStatus({ autostart: false }));
+    else dispatch(setConnectionStatus({ autostart: true }));
   };
   return (
     <div className={`${styles.container}`}>
       <button className={`${styles.btn}`} onClick={clickHanlder}>
-        {!status ? 'Подключиться' : 'Отключиться'}
+        {!autostart ? 'Connect' : 'Disconnect'}
       </button>
     </div>
   );

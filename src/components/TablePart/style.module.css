@@ -16,6 +16,7 @@
 
 .tablesRow {
   display: flex;
+  text-transform: uppercase;
 }
 
 .tablesRow div {

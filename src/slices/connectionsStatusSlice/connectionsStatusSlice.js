@@ -1,12 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = false;
+
+
+const initialState = {autostart:true,restart:false};
 
 const connectionStatusSlice = createSlice({
     name: "connection-status",
     initialState,
     reducers: {
-        setConnectionStatus: (state, action) => action.payload,
+        setConnectionStatus: (state, action) => ({...state,...action.payload}),
     }
 });
 

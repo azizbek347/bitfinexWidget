@@ -29,10 +29,10 @@ const OrderBook = () => {
   };
   const changePrecision = (value) => {
     bookOptions.prec = `P${value}`;
-    dispatch(setConnectionStatus(false));
+    dispatch(setConnectionStatus({restart:false}));
     setPrecision(() => value);
     setTimeout(() => {
-      dispatch(setConnectionStatus(true));
+      dispatch(setConnectionStatus({restart:true}));
     }, 0);
   };
 
@@ -71,14 +71,14 @@ const OrderBook = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <p className={styles.title}>Книга заявок</p>
+        <p className={styles.title}>Order book</p>
         <ul className={styles.buttons}>
           <button
             className={`${styles.buttonReset} ${
               precision === 4 ? styles.disabled : ''
             }`}
             onClick={decreasePrecision}
-            title='Понизить точность'
+            title='Decrease precision'
           >
             <FaAngleLeft />
           </button>
@@ -89,7 +89,7 @@ const OrderBook = () => {
                 !precision ? styles.disabled : ''
               }`}
               onClick={increasePrecision}
-              title='Повысить точность'
+              title='Increase precision'
             >
               <FaAngleRight />
             </button>
@@ -100,7 +100,7 @@ const OrderBook = () => {
                 depthBar - 4.9 > Number.EPSILON ? styles.disabled : ''
               }`}
               onClick={increaseDepthBar}
-              title='Уменьшить глубину визуалиции'
+              title='Zoom out book depth vizualization'
             >
               <FaSearchMinus />
             </button>
@@ -111,7 +111,7 @@ const OrderBook = () => {
                 depthBar - 0.1 < Number.EPSILON ? styles.disabled : ''
               }`}
               onClick={decreaseDepthBar}
-              title='Увеличить глубину визуалиции'
+              title='Zoom in book depth vizualization'
             >
               <FaSearchPlus />
             </button>

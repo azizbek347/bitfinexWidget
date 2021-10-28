@@ -15,10 +15,10 @@ const TablePart = ({
       }`}
     >
       <div className={`${styles.tablesRow}`}>
-        <div>Количество</div>
-        <div>Сумма</div>
-        <div>Всего</div>
-        <div>Цена</div>
+        <div>Count</div>
+        <div>Amount</div>
+        <div>Total</div>
+        <div>Price</div>
       </div>
       {data &&
         data.map((k, i) => {
