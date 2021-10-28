@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 
-const initialState = {autostart:true,restart:false};
+const initialState = {autostart:true,restart:true};
 
 const connectionStatusSlice = createSlice({
     name: "connection-status",

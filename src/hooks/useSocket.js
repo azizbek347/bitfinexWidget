@@ -22,6 +22,6 @@ export const useSocket = () => {
     const connectData = connect(dataHandler);
     useEffect(() => {
         const socket = connectData(connectionStatus);
-        return ()=>{}
+        return () => {}
     }, [connectionStatus, connectData]);
 };
